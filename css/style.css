@@ -1,0 +1,1196 @@
+
+/* =========================================================
+   01. VARIÁVEIS / IDENTIDADE VISUAL
+   ========================================================= */
+
+:root {
+    --vinho: #760728;
+    --vinho-escuro: #4f041b;
+    --dourado: #b49821;
+    --creme: #f6f4f0;
+    --creme-claro: #fffdf9;
+    --creme-secundario: #eeeae2;
+    --texto: #30262a;
+    --texto-secundario: #574a4f;
+    --borda: #ded5c8;
+    --branco: #ffffff;
+    --fonte-titulo: "Simple Serenity", "Cormorant Garamond", "Times New Roman", serif;
+    --fonte-decorativa: "Lucien Schoenschrift Caj", "Baskerville", "Times New Roman", serif;
+    --fonte-texto: "Sorts Mill Goudy", "Times New Roman", serif;
+}
+
+/* =========================================================
+   02. CONFIGURAÇÕES GERAIS
+   ========================================================= */
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    width: 100%;
+    min-height: 100vh;
+    background-color: var(--creme);
+    color: var(--texto);
+    font-family: var(--fonte-texto);
+    font-size: 16px;
+    line-height: 1.65;
+}
+
+a{
+    color: inherit;
+    text-decoration: none;
+}
+
+img{
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+button, input, textarea, select{
+    font-family: inherit;
+    font-size: inherit;
+}
+
+button{
+    cursor: pointer;
+}
+
+/* =========================================================
+   03. CONTAINER PRINCIPAL
+   ========================================================= */
+
+.container{
+    width: 92%;
+    max-width: 1180px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* =========================================================
+   04. LINHA DECORATIVA SUPERIOR
+   ========================================================= */
+
+.topline{
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, var(--vinho), var(--dourado), var(--vinho));
+}
+
+/* =========================================================
+   05. CABEÇALHO
+   ========================================================= */
+
+.header{
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    width: 100%;
+    background-color: rgba(246, 244, 240, 0.96);
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: var(--borda);
+    backdrop-filter: blur(12px);
+}
+
+.navbar{
+    min-height: 82px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+}
+
+.brand{
+    min-width: 180px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.brand img{
+    width: 165px;
+    height: auto;
+}
+
+/* =========================================================
+   06. MENU DE NAVEGAÇÃO
+   ========================================================= */
+
+.nav-links{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    list-style: none;
+    font-size: 0.94rem;
+}
+
+.nav-links a{
+    position: relative;
+    display: block;
+    padding-top: 10px;
+    padding-right: 2px;
+    padding-bottom: 10px;
+    padding-left: 2px;
+    color: var(--vinho);
+}
+
+.nav-links a::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 4px;
+    width: 0;
+    height: 1px;
+    background-color: var(--dourado);
+    transition: width 0.25s ease;
+}
+
+.nav-links a:hover::after{
+    width: 100%;
+}
+
+.nav-links a.active::after{
+    width: 100%;
+}
+
+/* =========================================================
+   07. BOTÃO DO MENU MOBILE
+   ========================================================= */
+
+.menu-btn{
+    display: none;
+    border: none;
+    background-color: transparent;
+    color: var(--vinho);
+    font-size: 1.7rem;
+}
+
+/* =========================================================
+   08. BOTÕES GERAIS
+   ========================================================= */
+
+.btn{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding-top: 12px;
+    padding-right: 20px;
+    padding-bottom: 12px;
+    padding-left: 20px;
+    border-width: 0;
+    border-style: solid;
+    border-radius: 7px;
+    background-color: var(--vinho);
+    color: var(--branco);
+    box-shadow: 0 6px 14px rgba(118, 7, 40, 0.18);
+    transition:transform 0.25s ease, background-color 0.25s ease;
+}
+
+.btn:hover{
+    transform: translateY(-2px);
+    background-color: var(--vinho-escuro);
+}
+
+.btn.gold{
+    background-color: var(--dourado);
+    color: #241c08;
+}
+
+.btn.outline{
+    background-color: transparent;
+    color: var(--vinho);
+    border-width: 1px;
+    border-style: solid;
+    border-color: var(--vinho);
+    box-shadow: none;
+}
+
+.btn.small{
+    padding-top: 9px;
+    padding-right: 14px;
+    padding-bottom: 9px;
+    padding-left: 14px;
+    font-size: 0.9rem;
+}
+
+/* =========================================================
+   09. TÍTULOS
+   ========================================================= */
+
+h1, h2, h3{
+    font-family: var(--fonte-titulo);
+    font-weight: 500;
+    color: var(--vinho);
+    line-height: 1.12;
+}
+
+h1{
+    font-size: clamp(3rem, 6vw, 5.4rem);
+}
+
+h2{
+    font-size: clamp(2rem, 4vw, 3.4rem);
+}
+
+h3{
+    font-size: 1.7rem;
+}
+
+.hero h1 em{
+    font-family: var(--fonte-decorativa);
+    font-weight: 400;
+    color: var(--dourado);
+}
+
+/* =========================================================
+   10. TEXTO AUXILIAR / EYEBROW
+   ========================================================= */
+
+.eyebrow{
+    margin-bottom: 14px;
+    color: var(--dourado);
+    font-size: 0.78rem;
+    font-weight: bold;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+}
+
+.lead{
+    max-width: 650px;
+    margin-top: 24px;
+    margin-bottom: 28px;
+    font-size: 1.12rem;
+}
+
+/* =========================================================
+   11. HERO DA PÁGINA INICIAL
+   ========================================================= */
+
+.hero{
+    position: relative;
+    overflow: hidden;
+    padding-top: 85px;
+    padding-bottom: 70px;
+    background-color: var(--creme-claro);
+}
+
+.hero::before{
+    content: "ADA";
+    position: absolute;
+    top: 20px;
+    right: 2%;
+    color: rgba(180, 152, 33, 0.08);
+    font-family: Georgia, serif;
+    font-size: 14rem;
+    line-height: 1;
+    pointer-events: none;
+}
+
+.hero-grid{
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    align-items: center;
+    gap: 55px;
+}
+
+.hero-actions{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.hero-art{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-art img{
+    width: min(470px, 100%);
+    filter: drop-shadow(0 20px 22px rgba(64, 17, 30, 0.13));
+}
+
+/* =========================================================
+   12. FAIXA DE ESTATÍSTICAS
+   ========================================================= */
+
+.stats{
+    padding-top: 28px;
+    padding-bottom: 28px;
+    background-color: var(--vinho);
+    color: var(--branco);
+}
+
+.stats-grid{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.stat{
+    text-align: center;
+    border-right-width: 1px;
+    border-right-style: solid;
+    border-right-color: rgba(255, 255, 255, 0.22);
+}
+
+.stat:last-child{
+    border-right: none;
+}
+
+.stat strong{
+    display: block;
+    color: var(--branco);
+    font-family: var(--fonte-titulo);
+    font-size: 2.3rem;
+}
+
+.stat span{
+    color: #f2e7df;
+    font-size: 0.92rem;
+}
+
+/* =========================================================
+   13. SEÇÕES
+   ========================================================= */
+
+.section{
+    padding-top: 78px;
+    padding-bottom: 78px;
+}
+
+.section.alt{
+    background-color: var(--creme-claro);
+}
+
+.section-head{
+    max-width: 760px;
+    margin-bottom: 38px;
+}
+
+.section-head p{
+    margin-top: 14px;
+}
+
+/* =========================================================
+   14. CARDS
+   ========================================================= */
+
+.cards{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+.card{
+    padding-top: 25px;
+    padding-right: 25px;
+    padding-bottom: 25px;
+    padding-left: 25px;
+    background-color: var(--creme-claro);
+    border-width: 1px;
+    border-style: solid;
+    border-color: var(--borda);
+    border-radius: 12px;
+    box-shadow: 0 14px 35px rgba(71, 20, 31, 0.10);
+}
+
+.card.alt{
+    background-color: var(--creme);
+}
+
+.card h3{
+    margin-bottom: 10px;
+    font-size: 1.45rem;
+}
+
+.card p{
+    color: var(--texto-secundario);
+}
+
+/* =========================================================
+   15. ÍCONES DOS CARDS
+   ========================================================= */
+
+.icon{
+    width: 48px;
+    height: 48px;
+    display: grid;
+    place-items: center;
+    margin-bottom: 18px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: var(--dourado);
+    border-radius: 50%;
+    color: var(--vinho);
+    font-size: 1.35rem;
+}
+
+/* =========================================================
+   16. TÍTULO DAS PÁGINAS INTERNAS
+   ========================================================= */
+
+.page-hero{
+    position: relative;
+    overflow: hidden;
+    padding-top: 60px;
+    padding-bottom: 60px;
+    background-color: var(--vinho);
+    color: var(--branco);
+}
+
+.page-hero::before{
+    content: "ADA";
+    position: absolute;
+    top: 20px;
+    right: 2%;
+    color: rgba(255, 255, 255, 0.08);
+    font-family: Georgia, serif;
+    font-size: 14rem;
+    line-height: 1;
+    pointer-events: none;
+}
+
+.page-hero h1{
+    color: var(--branco);
+    font-size: clamp(2.7rem, 5vw, 4.5rem);
+}
+
+.page-hero .eyebrow {
+    color: #ead77c;
+}
+
+.page-hero p{
+    max-width: 760px;
+    margin-top: 15px;
+    color: #f7e9ed;
+}
+
+/* =========================================================
+   17. LAYOUT DE DUAS COLUNAS
+   ========================================================= */
+
+.two-col{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+    gap: 42px;
+}
+
+/* =========================================================
+   18. LISTAS DE INFORMAÇÕES
+   ========================================================= */
+
+.info-list{
+    display: grid;
+    gap: 14px;
+    margin-top: 20px;
+}
+
+.info-item{
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+}
+
+.info-item .icon{
+    flex-shrink: 0;
+    width: 38px;
+    height: 38px;
+    margin-bottom: 0;
+    font-size: 1rem;
+}
+
+/* =========================================================
+   19. LINHA DO TEMPO
+   ========================================================= */
+
+.timeline{
+    position: relative;
+    display: grid;
+    gap: 22px;
+    margin-top: 28px;
+}
+
+.timeline::before{
+    content: "";
+    position: absolute;
+    top: 8px;
+    bottom: 8px;
+    left: 18px;
+    width: 2px;
+    background-color: var(--dourado);
+}
+
+.timeline-item{
+    position: relative;
+    display: grid;
+    grid-template-columns: 38px 1fr;
+    gap: 18px;
+}
+
+.timeline-dot{
+    z-index: 1;
+    width: 38px;
+    height: 38px;
+    border-width: 3px;
+    border-style: solid;
+    border-color: var(--creme);
+    border-radius: 50%;
+    outline-width: 1px;
+    outline-style: solid;
+    outline-color: var(--dourado);
+    background-color: var(--vinho);
+}
+
+.timeline-content{
+    padding: 20px;
+    background-color: var(--creme-claro);
+    border-width: 1px;
+    border-style: solid;
+    border-color: var(--borda);
+    border-radius: 10px;
+}
+
+/* =========================================================
+   20. ABAS
+   ========================================================= */
+
+.tabs{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 28px;
+}
+
+.tab-btn{
+    padding-top: 11px;
+    padding-right: 18px;
+    padding-bottom: 11px;
+    padding-left: 18px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: var(--borda);
+    border-radius: 6px;
+    background-color: var(--creme-claro);
+    color: var(--vinho);
+}
+
+.tab-btn.active{
+    background-color: var(--vinho);
+    color: var(--branco);
+}
+
+.tab-panel{
+    display: none;
+}
+
+.tab-panel.active{
+    display: block;
+}
+
+/* =========================================================
+   21. GRÁFICOS
+   ========================================================= */
+
+.chart-card{
+    padding: 28px;
+    background-color: var(--creme-claro);
+    border-width: 1px;
+    border-style: solid;
+    border-color: var(--borda);
+    border-radius: 12px;
+}
+
+.bar-chart{
+    display: grid;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.bar-row{
+    display: grid;
+    grid-template-columns: 90px 1fr 55px;
+    align-items: center;
+    gap: 12px;
+}
+
+.bar-track{
+    height: 18px;
+    overflow: hidden;
+    background-color: #e8e1d8;
+    border-radius: 30px;
+}
+
+.bar-fill{
+    height: 100%;
+    background-color: var(--vinho);
+    border-radius: 30px;
+    transition: width 0.9s ease;
+}
+
+.bar-fill.gold{
+    background-color: var(--dourado);
+}
+
+/* =========================================================
+   22. AVISO / NOTA
+   ========================================================= */
+
+.note{
+    margin-top: 22px;
+    padding-top: 15px;
+    padding-right: 18px;
+    padding-bottom: 15px;
+    padding-left: 18px;
+    border-left-width: 4px;
+    border-left-style: solid;
+    border-left-color: var(--dourado);
+    background-color: #fbf7ed;
+}
+
+/* =========================================================
+   23. TABELAS
+   ========================================================= */
+
+.table-wrap{
+    overflow-x: auto;
+    background-color: var(--creme-claro);
+    border-width: 1px;
+    border-style: solid;
+    border-color: var(--borda);
+    border-radius: 10px;
+}
+
+table{
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 650px;
+}
+
+th,td{
+    padding-top: 14px;
+    padding-right: 14px;
+    padding-bottom: 14px;
+    padding-left: 14px;
+    text-align: left;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: var(--borda);
+}
+
+th{
+    background-color: #f4efe6;
+    color: var(--vinho);
+}
+
+/* =========================================================
+   24. GALERIA
+   ========================================================= */
+
+.gallery{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.gallery-item{
+    position: relative;
+    overflow: hidden;
+    min-height: 180px;
+    background-color: var(--creme-claro);
+    border-width: 1px;
+    border-style: solid;
+    border-color: var(--borda);
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.fake-photo{
+    height: 220px;
+    display: grid;
+    place-items: center;
+    padding: 20px;
+    background: linear-gradient(135deg, #e9e1d5,#fffdf9);
+    color: var(--vinho);
+    font-family: var(--fonte-titulo);
+    font-size: 1.35rem;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover .fake-photo{
+    transform: scale(1.03);
+}
+
+.gallery-caption{
+    padding: 13px;
+}
+
+/* =========================================================
+   25. NOTÍCIAS
+   ========================================================= */
+
+.news-grid{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.news-card{
+    overflow: hidden;
+    background-color: var(--creme-claro);
+    border-width: 1px;
+    border-style: solid;
+    border-color: var(--borda);
+    border-radius: 12px;
+}
+
+.news-img{
+    height: 170px;
+    display: grid;
+    place-items: center;
+    padding: 20px;
+    background: linear-gradient(135deg, var(--vinho), #a33b58);
+    color: var(--branco);
+    font-family: var(--fonte-titulo);
+    font-size: 2rem;
+    text-align: center;
+}
+
+.news-body{
+    padding: 20px;
+}
+
+.news-body small{
+    color: var(--dourado);
+}
+
+/* =========================================================
+   26. FILTROS
+   ========================================================= */
+
+.filters{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 22px;
+    margin-bottom: 22px;
+}
+
+.filter-btn{
+    padding-top: 9px;
+    padding-right: 15px;
+    padding-bottom: 9px;
+    padding-left: 15px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: var(--borda);
+    border-radius: 20px;
+    background-color: var(--creme-claro);
+    color: var(--vinho);
+}
+
+.filter-btn.active{
+    background-color: var(--vinho);
+    color: var(--branco);
+    border-color: var(--vinho);
+}
+
+/* =========================================================
+   27. FORMULÁRIOS
+   ========================================================= */
+
+.form-grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+}
+
+.field{
+    display: grid;
+    gap: 7px;
+}
+
+.field.full{
+    grid-column: 1 / -1;
+}
+
+.field label{
+    color: var(--vinho);
+    font-weight: bold;
+}
+
+.field input,.field textarea,.field select{
+    width: 100%;
+    padding-top: 13px;
+    padding-right: 13px;
+    padding-bottom: 13px;
+    padding-left: 13px;
+    background-color: var(--creme-claro);
+    border-width: 1px;
+    border-style: solid;
+    border-color: var(--borda);
+    border-radius: 7px;
+    outline: none;
+}
+
+.field input:focus,.field textarea:focus,.field select:focus{
+    border-color: var(--dourado);
+    box-shadow: 0 0 0 3px rgba(180, 152, 33, 0.12);
+}
+
+.field textarea{
+    min-height: 140px;
+    resize: vertical;
+}
+
+/* =========================================================
+   28. CONTATO
+   ========================================================= */
+
+.contact-gri{
+    display: grid;
+    grid-template-columns: 0.8fr 1.2fr;
+    gap: 35px;
+}
+
+.instagram-box{
+    margin-top: 20px;
+    padding: 30px;
+    background-color: var(--vinho);
+    border-radius: 12px;
+    color: var(--branco);
+}
+
+.instagram-box h3{
+    color: var(--branco);
+}
+
+.insta-btn{
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 15px;
+    padding-top: 11px;
+    padding-right: 17px;
+    padding-bottom: 11px;
+    padding-left: 17px;
+    background-color: var(--branco);
+    border-radius: 7px;
+    color: var(--vinho);
+    font-weight: bold;
+}
+
+/* =========================================================
+   29. ÍCONE DO INSTAGRAM
+   ========================================================= */
+
+.insta-icon{
+    position: relative;
+    display: inline-block;
+    width: 23px;
+    height: 23px;
+    border-width: 2px;
+    border-style: solid;
+    border-color: currentColor;
+    border-radius: 7px;
+}
+
+.insta-icon::before {
+    content: "";
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    width: 8px;
+    height: 8px;
+    border-width: 2px;
+    border-style: solid;
+    border-color: currentColor;
+    border-radius: 50%;
+}
+
+.insta-icon::after{
+    content: "";
+    position: absolute;
+    top: 3px;
+    right: 3px;
+    width: 3px;
+    height: 3px;
+    background-color: currentColor;
+    border-radius: 50%;
+}
+
+/* =========================================================
+   30. RODAPÉ
+   ========================================================= */
+
+.footer{
+    margin-top: 40px;
+    padding-top: 45px;
+    padding-bottom: 20px;
+    background-color: #3d101f;
+    color: #eee6df;
+}
+
+.footer-grid{
+    display: grid;
+    grid-template-columns: 1.3fr 1fr 1fr;
+    gap: 35px;
+}
+
+.footer-logo{
+    width: 180px;
+    margin-bottom: 12px;
+    opacity: 0.95;
+}
+
+.footer h3{
+    margin-bottom: 12px;
+    color: #ead77c;
+    font-size: 1.4rem;
+}
+
+.footer a:hover{
+    color: #ead77c;
+}
+
+.footer-bottom{
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    margin-top: 30px;
+    padding-top: 18px;
+    border-top-width: 1px;
+    border-top-style: solid;
+    border-top-color: rgba(255, 255, 255, 0.18);
+    font-size: 0.84rem;
+}
+
+/* =========================================================
+   31. MODAL
+   ========================================================= */
+
+.modal{
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 100;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background-color: rgba(31, 8, 16, 0.72);
+}
+
+.modal.show{
+    display: flex;
+}
+
+.modal-box{
+    position: relative;
+    width: 100%;
+    max-width: 650px;
+    padding: 30px;
+    background-color: var(--creme-claro);
+    border-radius: 12px;
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.25);
+}
+
+.close{
+    position: absolute;
+    top: 12px;
+    right: 15px;
+    border: none;
+    background-color: transparent;
+    color: var(--vinho);
+    font-size: 1.8rem;
+}
+
+/* =========================================================
+   32. ANIMAÇÕES
+   ========================================================= */
+
+.reveal{
+    opacity: 0;
+    transform: translateY(18px);
+    transition:opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal.visible{
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.toast{
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    z-index: 120;
+    padding-top: 14px;
+    padding-right: 18px;
+    padding-bottom: 14px;
+    padding-left: 18px;
+    background-color: var(--vinho);
+    border-radius: 8px;
+    color: var(--branco);
+    box-shadow: 0 14px 35px rgba(71, 20, 31, 0.10);
+    transform: translateY(120px);
+    opacity: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.toast.show{
+    transform: translateY(0);
+    opacity: 1;
+}
+
+/* =========================================================
+   33. RESPONSIVIDADE — TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+    .nav-links{
+        position: absolute;
+        top: 82px;
+        left: 0;
+        right: 0;
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        padding-top: 18px;
+        padding-right: 4%;
+        padding-bottom: 18px;
+        padding-left: 4%;
+        background-color: var(--creme);
+        border-bottom-width: 1px;
+        border-bottom-style: solid;
+        border-bottom-color: var(--borda);
+    }
+
+    .nav-links.open{
+        display: flex;
+    }
+
+    .menu-btn{
+        display: block;
+    }
+
+    .navbar > .btn{
+        display: none;
+    }
+
+    .hero-grid{
+        grid-template-columns: 1fr;
+    }
+
+    .hero-art{
+        order: -1;
+    }
+
+    .two-col{
+        grid-template-columns: 1fr;
+    }
+
+    .contact-grid{
+        grid-template-columns: 1fr;
+    }
+
+    .cards{
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .news-grid{
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .stats-grid{
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .gallery{
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+/* =========================================================
+   34. RESPONSIVIDADE — CELULAR
+   ========================================================= */
+
+@media (max-width: 620px){
+    h1{
+        font-size: 3rem;
+    }
+
+    .section{
+        padding-top: 55px;
+        padding-bottom: 55px;
+    }
+
+    .hero{
+        padding-top: 55px;
+        padding-bottom: 55px;
+    }
+
+    .cards{
+        grid-template-columns: 1fr;
+    }
+
+    .news-grid{
+        grid-template-columns: 1fr;
+    }
+
+    .gallery{
+        grid-template-columns: 1fr;
+    }
+
+    .stats-grid{
+        grid-template-columns: 1fr;
+    }
+
+    .form-grid{
+        grid-template-columns: 1fr;
+    }
+
+    .footer-grid{
+        grid-template-columns: 1fr;
+    }
+
+    .stat{
+        padding-top: 12px;
+        padding-bottom: 12px;
+        border-right: none;
+        border-bottom-width: 1px;
+        border-bottom-style: solid;
+        border-bottom-color: rgba(255, 255, 255, 0.18);
+    }
+
+    .stat:last-child{
+        border-bottom: none;
+    }
+
+    .footer-bottom{
+        flex-direction: column;
+    }
+
+    .bar-row{
+        grid-template-columns: 70px 1fr 45px;
+        font-size: 0.9rem;
+    }
+
+    .hero::before,.page-hero::before{
+    font-size: 8rem;
+    }
+}
