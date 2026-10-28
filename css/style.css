@@ -1194,3 +1194,733 @@ th{
     font-size: 8rem;
     }
 }
+
+/* =========================================================
+Estilos complementares exclusivos dos conteúdos adicionados à página Pesquisa.
+========================================================= */
+
+.ada-research-extra{
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(120, 120, 120, 0.22);
+}
+
+.ada-extra-heading{
+  max-width: 780px;
+  margin-bottom: 1.25rem;
+}
+
+.ada-extra-heading h2{
+  margin: 0.25rem 0 0.65rem;
+}
+
+.ada-extra-heading p:last-child {
+  margin-bottom: 0;
+}
+
+.ada-extra-grid{
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.ada-extra-card{
+  min-width: 0;
+  padding: 1.15rem;
+  border: 1px solid rgba(120, 120, 120, 0.22);
+  border-radius: 14px;
+  background: var(--card, #fff);
+}
+
+.ada-extra-card h3{
+  margin: 0.2rem 0 0.55rem;
+}
+
+.ada-extra-card p:last-child{
+  margin-bottom: 0;
+}
+
+.ada-extra-kicker{
+  margin: 0 0 0.35rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.035em;
+  text-transform: uppercase;
+  opacity: 0.72;
+}
+
+.ada-extra-grid-stats{
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.ada-stat-number{
+  display: block;
+  margin-bottom: 0.35rem;
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+.ada-source-note{
+  margin: 1rem 0 0;
+  font-size: 0.86rem;
+  line-height: 1.55;
+  opacity: 0.78;
+}
+
+.ada-extra-callout{
+  margin-top: 1rem;
+  padding: 1.15rem;
+  border-left: 4px solid var(--accent, #8a5a9e);
+  border-radius: 0 12px 12px 0;
+  background: rgba(120, 120, 120, 0.08);
+}
+
+.ada-extra-callout h3{
+  margin-top: 0;
+}
+
+.ada-extra-callout p:last-child{
+  margin-bottom: 0;
+}
+
+@media (max-width: 720px){
+  .ada-extra-grid, .ada-extra-grid-stats{
+    grid-template-columns: 1fr;
+  }
+  .ada-extra-card, .ada-extra-callout{
+    padding: 1rem;
+  }
+}
+
+/* ========================================
+   Seção: Como as oficinas foram acompanhadas
+   ======================================== */
+
+.section.alt .section-head {
+    margin-bottom: 1.5rem;
+}
+
+.section.alt .section-head .eyebrow {
+    margin-bottom: 0.5rem;
+}
+
+.section.alt .section-head h2 {
+    margin-top: 0;
+    line-height: 1.2;
+}
+
+/* Card da metodologia: usa as cores e bordas do tema principal */
+
+.section.alt .card {
+    line-height: 1.7;
+}
+
+.section.alt .card p {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    line-height: 1.7;
+}
+
+.section.alt .card h3 {
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+    color: var(--vinho);
+    font-size: 1.35rem;
+    line-height: 1.3;
+}
+
+.section.alt .card ul {
+    margin: 0.75rem 0 1.25rem;
+    padding-left: 1.5rem;
+}
+
+.section.alt .card li {
+    margin-bottom: 0.75rem;
+    padding-left: 0.2rem;
+    color: var(--texto-secundario);
+    line-height: 1.65;
+}
+
+.section.alt .card li:last-child {
+    margin-bottom: 0;
+}
+
+.section.alt .card li strong {
+    color: var(--vinho);
+    font-weight: 600;
+}
+
+/* Nota de contexto: destaque dourado, alinhado aos avisos do site */
+
+.section.alt .card .note {
+    margin-top: 1.25rem;
+    padding: 0.85rem 1rem;
+    border-left: 4px solid var(--dourado);
+    border-radius: 0 8px 8px 0;
+    background-color: #fbf7ed;
+    color: var(--texto-secundario);
+    line-height: 1.6;
+}
+
+/* Referência da fonte */
+
+.section.alt .card .ada-source-note {
+    margin-top: 1rem;
+    margin-bottom: 0;
+    padding-top: 0.75rem;
+    border-top: 1px solid var(--borda);
+    color: var(--texto-secundario);
+    font-size: 0.875rem;
+    line-height: 1.6;
+}
+
+/* Ajustes para telas menores */
+
+@media (max-width: 720px) {
+    .section.alt .section-head {
+        margin-bottom: 1rem;
+    }
+
+    .section.alt .card {
+        padding: 1.25rem;
+    }
+
+    .section.alt .card h3 {
+        margin-top: 1.25rem;
+        font-size: 1.2rem;
+    }
+
+    .section.alt .card ul {
+        padding-left: 1.2rem;
+    }
+
+    .section.alt .card li {
+        margin-bottom: 0.85rem;
+    }
+
+    .section.alt .card .note {
+        padding: 0.75rem;
+    }
+}
+
+/* =========================================================
+   35. MULHERES NA TECH — cards de trajetórias inspiradoras
+   ========================================================= */
+
+.women-section {
+    background:
+        radial-gradient(ellipse at 100% 0%, rgba(180, 152, 33, 0.08), transparent 34%),
+        var(--creme);
+}
+
+.women-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+    align-items: stretch;
+}
+
+.woman-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    padding: 25px;
+    overflow: hidden;
+    background: var(--creme-claro);
+    border: 1px solid var(--borda);
+    border-radius: 14px;
+    box-shadow: 0 14px 35px rgba(71, 20, 31, 0.08);
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.woman-card::before {
+    content: "";
+    position: absolute;
+    inset: 0 0 auto;
+    height: 4px;
+    background: linear-gradient(90deg, var(--vinho), var(--dourado));
+}
+
+.woman-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(180, 152, 33, 0.75);
+    box-shadow: 0 20px 42px rgba(71, 20, 31, 0.13);
+}
+
+.woman-card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.woman-number {
+    color: var(--dourado);
+    font-family: var(--fonte-titulo);
+    font-size: 1.15rem;
+    font-weight: 700;
+}
+
+.woman-field {
+    max-width: 75%;
+    padding: 5px 9px;
+    border: 1px solid rgba(180, 152, 33, 0.45);
+    border-radius: 30px;
+    color: var(--vinho);
+    font-size: 0.7rem;
+    line-height: 1.4;
+    text-align: right;
+}
+
+.woman-monogram {
+    display: grid;
+    place-items: center;
+    width: 76px;
+    height: 76px;
+    margin-bottom: 18px;
+    border: 1px solid rgba(180, 152, 33, 0.65);
+    border-radius: 50%;
+    background: linear-gradient(145deg, #fffdf9, #eee5d9);
+    color: var(--vinho);
+    font-family: var(--fonte-titulo);
+    font-size: 1.8rem;
+    letter-spacing: 0.04em;
+    box-shadow: inset 0 0 0 5px rgba(180, 152, 33, 0.07);
+}
+
+.woman-card h3 {
+    margin-bottom: 5px;
+    font-size: 1.7rem;
+}
+
+.woman-role {
+    margin-bottom: 15px;
+    color: var(--dourado);
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+
+.woman-bio {
+    margin-bottom: 18px;
+    color: var(--texto-secundario);
+    font-size: 0.97rem;
+    line-height: 1.7;
+}
+
+.woman-card blockquote {
+    position: relative;
+    margin-top: auto;
+    padding: 18px 17px 16px;
+    border-left: 3px solid var(--dourado);
+    border-radius: 0 8px 8px 0;
+    background: #fbf7ed;
+    color: var(--vinho-escuro);
+    font-family: var(--fonte-titulo);
+    font-size: 1.2rem;
+    font-style: italic;
+    line-height: 1.45;
+}
+
+.woman-card blockquote::before {
+    content: "“";
+    display: block;
+    margin-bottom: -9px;
+    color: var(--dourado);
+    font-family: Georgia, serif;
+    font-size: 2.5rem;
+    font-style: normal;
+    line-height: 1;
+}
+
+.woman-quote-note {
+    margin-top: 10px;
+    color: var(--texto-secundario);
+    font-size: 0.76rem;
+    line-height: 1.5;
+}
+
+.women-callout {
+    display: flex;
+    align-items: flex-start;
+    gap: 18px;
+    margin-top: 34px;
+    padding: 27px 30px;
+    border: 1px solid rgba(180, 152, 33, 0.5);
+    border-radius: 12px;
+    background: var(--creme-claro);
+}
+
+.women-callout-mark {
+    flex: 0 0 auto;
+    color: var(--dourado);
+    font-size: 1.8rem;
+    line-height: 1.2;
+}
+
+.women-callout h3 {
+    margin-bottom: 8px;
+    font-size: 1.55rem;
+}
+
+.women-callout p {
+    color: var(--texto-secundario);
+}
+
+.women-source-note {
+    margin-top: 18px;
+    color: var(--texto-secundario);
+    font-size: 0.82rem;
+    line-height: 1.6;
+}
+
+@media (max-width: 1000px) {
+    .women-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 620px) {
+    .women-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .woman-card {
+        padding: 22px;
+    }
+
+    .women-callout {
+        padding: 22px;
+    }
+
+    .woman-card blockquote {
+        font-size: 1.15rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .woman-card {
+        transition: none;
+    }
+
+    .woman-card:hover {
+        transform: none;
+    }
+}
+
+/* ==========================================
+   MULHERES NA TECH — CARDS
+   ========================================== */
+
+.women-section {
+    background:
+        radial-gradient(
+            ellipse at 100% 0%,
+            rgba(180, 152, 33, 0.08),
+            transparent 34%
+        ),
+        var(--creme);
+}
+
+/* Grade dos cards */
+.women-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+    align-items: stretch;
+}
+
+/* Card individual */
+.woman-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    padding: 25px;
+    overflow: hidden;
+
+    background: var(--creme-claro);
+    border: 1px solid var(--borda);
+    border-radius: 14px;
+
+    box-shadow: 0 14px 35px rgba(71, 20, 31, 0.08);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        border-color 0.25s ease;
+}
+
+/* Detalhe dourado no topo do card */
+.woman-card::before {
+    content: "";
+    position: absolute;
+    inset: 0 0 auto;
+    height: 4px;
+
+    background: linear-gradient(
+        90deg,
+        var(--vinho),
+        var(--dourado)
+    );
+}
+
+/* Efeito ao passar o mouse */
+.woman-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(180, 152, 33, 0.75);
+    box-shadow: 0 20px 42px rgba(71, 20, 31, 0.13);
+}
+
+/* Cabeçalho do card */
+.woman-card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+/* Número do card */
+.woman-number {
+    color: var(--dourado);
+    font-family: var(--fonte-titulo);
+    font-size: 1.15rem;
+    font-weight: 700;
+}
+
+/* Etiqueta da área de atuação */
+.woman-field {
+    max-width: 75%;
+    padding: 5px 9px;
+
+    border: 1px solid rgba(180, 152, 33, 0.45);
+    border-radius: 30px;
+
+    color: var(--vinho);
+    font-size: 0.7rem;
+    line-height: 1.4;
+    text-align: right;
+}
+
+/* Imagem e legenda */
+.woman-portrait {
+    width: 100%;
+    margin: 0 0 18px;
+    text-align: left;
+}
+
+/* Retrato circular */
+.woman-photo {
+    display: block;
+    width: 110px;
+    height: 110px;
+    margin: 0;
+
+    border: 2px solid rgba(180, 152, 33, 0.75);
+    border-radius: 50%;
+
+    object-fit: cover;
+    object-position: center 30%;
+
+    background: #eee5d9;
+    box-shadow: 0 4px 14px rgba(71, 20, 31, 0.12);
+}
+
+/* Fonte da imagem */
+.woman-portrait figcaption {
+    margin-top: 6px;
+    font-size: 0.68rem;
+    line-height: 1.3;
+}
+
+.woman-portrait figcaption a {
+    color: var(--texto-secundario);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+.woman-portrait figcaption a:hover {
+    color: var(--vinho);
+}
+
+/* Nome da personalidade */
+.woman-card h3 {
+    margin-bottom: 5px;
+    font-size: 1.7rem;
+}
+
+/* Profissão */
+.woman-role {
+    margin-bottom: 15px;
+    color: var(--dourado);
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+
+/* Biografia */
+.woman-bio {
+    margin-bottom: 18px;
+    color: var(--texto-secundario);
+    font-size: 0.97rem;
+    line-height: 1.7;
+}
+
+/* Frase em destaque */
+.woman-card blockquote {
+    position: relative;
+    margin-top: auto;
+    padding: 18px 17px 16px;
+
+    border-left: 3px solid var(--dourado);
+    border-radius: 0 8px 8px 0;
+
+    background: #fbf7ed;
+    color: var(--vinho-escuro);
+
+    font-family: var(--fonte-titulo);
+    font-size: 1.2rem;
+    font-style: italic;
+    line-height: 1.45;
+}
+
+/* Aspas decorativas */
+.woman-card blockquote::before {
+    content: "“";
+    display: block;
+    margin-bottom: -9px;
+
+    color: var(--dourado);
+    font-family: Georgia, serif;
+    font-size: 2.5rem;
+    font-style: normal;
+    line-height: 1;
+}
+
+/* Observação sobre a frase */
+.woman-quote-note {
+    margin-top: 10px;
+    color: var(--texto-secundario);
+    font-size: 0.76rem;
+    line-height: 1.5;
+}
+
+/* Bloco final sobre representatividade */
+.women-callout {
+    display: flex;
+    align-items: flex-start;
+    gap: 18px;
+
+    margin-top: 34px;
+    padding: 27px 30px;
+
+    border: 1px solid rgba(180, 152, 33, 0.5);
+    border-radius: 12px;
+    background: var(--creme-claro);
+}
+
+/* Símbolo decorativo */
+.women-callout-mark {
+    flex: 0 0 auto;
+    color: var(--dourado);
+    font-size: 1.8rem;
+    line-height: 1.2;
+}
+
+/* Título do bloco final */
+.women-callout h3 {
+    margin-bottom: 8px;
+    font-size: 1.55rem;
+}
+
+/* Texto do bloco final */
+.women-callout p {
+    color: var(--texto-secundario);
+}
+
+/* Nota sobre as citações */
+.women-source-note {
+    margin-top: 18px;
+    color: var(--texto-secundario);
+    font-size: 0.82rem;
+    line-height: 1.6;
+}
+
+/* ==========================================
+   RESPONSIVIDADE
+   ========================================== */
+
+/* Tablets e telas médias */
+@media (max-width: 1000px){
+    .women-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* Celulares */
+@media (max-width: 620px){
+    .women-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .woman-card{
+        padding: 22px;
+    }
+
+    .woman-photo{
+        width: 100px;
+        height: 100px;
+    }
+
+    .women-callout{
+        padding: 22px;
+    }
+
+    .woman-card blockquote{
+        font-size: 1.15rem;
+    }
+}
+
+/* Respeita a preferência por movimento reduzido */
+@media (prefers-reduced-motion: reduce) {
+    .woman-card{
+        transition: none;
+    }
+
+    .woman-card:hover{
+        transform: none;
+    }
+}
+
+/* QR Code do grupo de WhatsApp */
+
+.whatsapp-qr {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px auto;
+    padding: 12px;
+    width: fit-content;
+    background-color: #ffffff;
+    border: 1px solid #e5d9dd;
+    border-radius: 12px;
+}
+
+.whatsapp-qr img {
+    display: block;
+    width: 180px;
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+.qr-caption {
+    text-align: center;
+    font-size: 0.9rem;
+    opacity: 0.85;
+}
+
+

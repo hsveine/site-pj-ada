@@ -59,17 +59,78 @@ document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('.close').forEach(b=>b.addEventListener('click',()=>modal?.classList.remove('show')));
   modal?.addEventListener('click',e=>{if(e.target===modal)modal.classList.remove('show')});
 
-  const form=document.querySelector('#contactForm');
-  if(form){
-    form.addEventListener('submit',e=>{
-      e.preventDefault();
-      const nome=form.querySelector('[name="nome"]')?.value.trim();
-      const email=form.querySelector('[name="email"]')?.value.trim();
-      if(!nome || !email){showToast('Preencha nome e e-mail para continuar.');return}
-      form.reset();
-      showToast('Mensagem preparada com sucesso! Em uma versão publicada, ela poderá ser enviada ao projeto.');
+  const form = document.querySelector('#contactForm');
+
+if (form){
+    form.addEventListener('submit', async (e) =>{
+        e.preventDefault();
+        const nome = form.querySelector('[name="nome"]')?.value.trim();
+        const email = form.querySelector('[name="email"]')?.value.trim();
+        const assunto = form.querySelector('[name="assunto"]')?.value.trim();
+        const vinculo = form.querySelector('#vinculo')?.value;
+        const mensagem = form.querySelector('[name="mensagem"]')?.value.trim();
+
+if (!nome || !email || !assunto || !mensagem){
+    showToast('Preencha nome, e-mail, assunto e mensagem.');
+    return;
+}
+
+if (!vinculo){
+    showToast('Selecione uma opção no campo "Você é".');
+    return;
+}
+      const botao = form.querySelector('#submit-button');
+      const status = form.querySelector('#form-status');
+      if (botao){
+            botao.disabled = true;
+            botao.textContent = 'Enviando...';
+      }
+        if (status){
+            status.textContent = '';
+        }
+        try{
+            const dados = new FormData(form);
+            dados.append(
+                '_subject',
+                `Projeto ADA - ${assunto}`
+            );
+            dados.append('_replyto', email);
+            const resposta = await fetch('https://formsubmit.co/ajax/hellensveine@gmail.com',
+              {
+                    method: 'POST',
+                    headers: {
+                        'Accept': 'application/json'
+                    },
+                    body: dados
+                }
+            );
+            const resultado = await resposta.json();
+            if (!resposta.ok || resultado.success !== 'true'){
+                throw new Error(
+                    resultado.message || 'Falha no envio.'
+                );
+            }
+            form.reset();
+            if (status) {
+                status.textContent ='Mensagem enviada com sucesso! Obrigada pelo contato.';
+                status.className = 'success';
+            }
+            showToast('Mensagem enviada com sucesso!');
+        } catch (erro){
+            console.error('Erro ao enviar formulário:', erro);
+            if (status) {
+                status.textContent ='Não foi possível enviar a mensagem. Tente novamente.';
+                status.className = 'error';
+            }
+            showToast('Erro no envio. Tente novamente mais tarde.');
+        } finally{
+            if (botao){
+                botao.disabled = false;
+                botao.textContent = 'Enviar mensagem →';
+            }
+        }
     });
-  }
+}
 
   document.querySelectorAll('.counter').forEach(el=>{
     const target=Number(el.dataset.target||0), duration=900;
